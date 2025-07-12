@@ -8,6 +8,7 @@ Built with a minimal tech stack focused on simplicity and portability: using [No
 - [Getting Started](#getting-started)
 - [Deployment](#deployment)
 - [Updating Content](#updating-content)
+- [Content License](#content-license)
 
 ## Getting Started
 
@@ -58,3 +59,11 @@ This is my page content.
 **Assets**
 
 Place any static assets (images, stylesheets, etc.) in the `assets/` directory. These will be copied to the `dist/` folder during the build process. 
+
+## Content License 
+
+All files in the `content/` and `assets/` directories — including personal text, images, documents and likeness — are © [Alexander Brady], and licensed under the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
+
+You may share them with attribution, but not use them commercially or modify them.
+
+All source code outside these directories is licensed under the MIT License.
