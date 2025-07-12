@@ -107,6 +107,20 @@ getAllFiles(inputDir).forEach((file) => {
       }
     }
 
+    if (data.description) {
+      if (layout.includes('<meta name="description"')) {
+        layout = layout.replace(
+          /<meta name="description" content=".*">/,
+          `<meta name="description" content="${data.description}">`,
+        );
+      } else {
+        layout = layout.replace(
+          /<head>/,
+          `<head><meta name="description" content="${data.description}">`,
+        );
+      }
+    }
+
     const finalHtml = layout.replace("<!--CONTENT-->", htmlContent);
     const outputFilePath = join(
       outputDir,

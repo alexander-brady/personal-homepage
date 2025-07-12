@@ -38,7 +38,7 @@ This project uses [GitHub Actions](https://github.com/features/actions) to autom
 
 To update your homepage content, edit or add Markdown files in the `content/` directory. During the build process, these files are converted to HTML and styled using Tailwind. The output mirrors the folder structure of `content/`, with each Markdown file generating a corresponding page.
 
-You can include front matter in each file to define metadata such as the page title and layout (optional).
+You can include front matter in each file to define metadata such as the page title, description and layout (optional).
 
 
 **Custom Layouts**
@@ -50,6 +50,7 @@ To specify a custom template, add a template field in the front matter of your M
 ```md
 ---
 title: My Page Title
+description: A brief description of my page.
 template: custom-template
 ---
 # Hello World
