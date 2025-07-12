@@ -30,4 +30,4 @@ jobs:
           publish_dir: ./dist
           publish_branch: main
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
-
+          commit_message: "${{ github.event.head_commit.message }} (deployed via GitHub Actions from ${{ github.repository }})"
