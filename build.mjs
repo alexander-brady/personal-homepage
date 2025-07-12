@@ -15,6 +15,7 @@ const inputDir = "content";
 const outputDir = "dist";
 const templateDir = "templates";
 const assetSrc = "assets";
+const rootSrc = "root";
 const assetDest = join(outputDir, "assets");
 
 const baseTemplate = readFileSync(join(templateDir, "base.html"), "utf-8");
@@ -33,6 +34,14 @@ if (existsSync(assetSrc)) {
     copyFileSync(join(assetSrc, file), join(assetDest, file));
   });
   console.log("Copied assets/");
+}
+
+// Copy root files
+if (existsSync(rootSrc)) {
+  readdirSync(rootSrc).forEach(file => {
+    copyFileSync(join(rootSrc, file), join(outputDir, file));
+  });
+  console.log("Copied root/ to output directory.");
 }
 
 function getAllFiles(dir, baseDir = dir) {
