@@ -62,7 +62,7 @@ Place any static assets (images, stylesheets, etc.) in the `assets/` directory. 
 
 ## Content License 
 
-All files in the `content/` and `assets/` directories — including personal text, images, documents and likeness — are © [Alexander Brady], and licensed under the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
+All files in the `content/` and `assets/` directories — including personal text, images, documents and likeness — are © Alexander Brady, and licensed under the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
 
 You may share them with attribution, but not use them commercially or modify them.
 
