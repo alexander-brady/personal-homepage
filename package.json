@@ -1,7 +1,7 @@
 {
   "name": "personal-homepage",
   "version": "1.0.0",
-  "description": "Static homepage with Markdown content",
+  "description": "Static homepage generator from Markdown content",
   "author": "Alexander Brady",
   "license": "MIT",
   "scripts": {
