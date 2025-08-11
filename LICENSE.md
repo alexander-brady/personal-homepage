@@ -1,4 +1,11 @@
-MIT License
+All files in the `content/`, `root/`, and `assets/` directories — including personal text, images, documents, and likeness — are © Alexander Brady, and licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+You may share them with attribution, but not use them commercially or modify them.
+
+------------------------------------------------------------------------
+The following applies only to source code outside those directories:
+
+# MIT License
 
 Copyright (c) 2025 Alexander Brady
 
