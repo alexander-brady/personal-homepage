@@ -1,6 +1,6 @@
 # Homepage
 
-Personal homepage that converts Markdown files to HTML. This repository contains the source code and build scripts, which automatically deploy the generated site to alexander-brady.github.io via GitHub Actions.
+Personal homepage that converts Markdown files to HTML. This repository contains the source code and build scripts, which automatically deploy the generated site to [alexander-brady.github.io](https://alexander-brady.github.io) via GitHub Actions.
 
 Built with a minimal tech stack focused on simplicity and portability: using [Node.js](https://nodejs.org/en) for the build process, [Tailwind CSS](https://tailwindcss.com/) for styling, and [GitHub Actions](https://github.com/features/actions) + [Pages](https://pages.github.com/) for deployment.
 
