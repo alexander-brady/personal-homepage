@@ -1,22 +1,19 @@
 import {
+  cpSync,
   readFileSync,
+  readdirSync,
   existsSync,
   mkdirSync,
-  readdirSync,
-  copyFileSync,
   writeFileSync,
-  statSync,
 } from "fs";
-import { join, basename, extname, dirname } from "path";
+import { join, basename, extname, dirname, relative } from "path";
 import { parse } from "marked";
 import matter from "gray-matter";
 
 const inputDir = "content";
 const outputDir = "dist";
 const templateDir = "templates";
-const assetSrc = "assets";
-const rootSrc = "root";
-const assetDest = join(outputDir, "assets");
+const rootDir = "root";
 
 const baseTemplate = readFileSync(join(templateDir, "base.html"), "utf-8");
 const defaultTemplate = baseTemplate.replace(
@@ -24,43 +21,23 @@ const defaultTemplate = baseTemplate.replace(
   readFileSync(join(templateDir, "default.html"), "utf-8"),
 );
 
-// Ensure output folder exists
-if (!existsSync(outputDir)) mkdirSync(outputDir);
+// Copy static root files
+cpSync(rootDir, outputDir, { recursive: true });
 
-// Copy static assets
-if (existsSync(assetSrc)) {
-  if (!existsSync(assetDest)) mkdirSync(assetDest, { recursive: true });
-  readdirSync(assetSrc).forEach((file) => {
-    copyFileSync(join(assetSrc, file), join(assetDest, file));
-  });
-  console.log("Copied assets/");
-}
-
-// Copy root files
-if (existsSync(rootSrc)) {
-  readdirSync(rootSrc).forEach(file => {
-    copyFileSync(join(rootSrc, file), join(outputDir, file));
-  });
-  console.log("Copied root/ to output directory.");
-}
+const toPosixPath = (p) => p.replaceAll("\\", "/");
 
 function getAllFiles(dir, baseDir = dir) {
-  let results = [];
-  const list = readdirSync(dir);
-  list.forEach((file) => {
-    const fullPath = join(dir, file);
-    const stat = statSync(fullPath);
-    if (stat && stat.isDirectory()) {
-      results = results.concat(getAllFiles(fullPath, baseDir));
-    } else {
-      const normalize = (p) => p.replace(/\\/g, "/");
-      const relativePath = normalize(fullPath).replace(
-        normalize(baseDir) + "/",
-        "",
-      );
-      results.push(relativePath);
+  const results = [];
+
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const fullPath = join(dir, entry.name);
+
+    if (entry.isDirectory()) {
+      results.push(...getAllFiles(fullPath, baseDir));
+    } else if (entry.isFile()) {
+      results.push(toPosixPath(relative(baseDir, fullPath)));
     }
-  });
+  }
 
   return results;
 }

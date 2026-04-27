@@ -65,9 +65,11 @@ Place any static assets (images, stylesheets, etc.) in the `assets/` directory. 
 
 To include files that should be served at the root of the site (like `robots.txt` or `favicon.ico`), place them in the `root/` directory. These files will be copied directly to the output directory during the build process.
 
+Any static assets (images, stylesheets, etc.) should be placed in this directory as well.
+
 ## Content License 
 
-All files in the `content/`, `root/` and `assets/` directories — including personal text, images, documents and likeness — are © Alexander Brady, and licensed under the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
+All files in the `content/` and `root/` directories — including personal text, images, documents and likeness — are © Alexander Brady, and licensed under the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
 
 You may share them with attribution, but not use them commercially or modify them.
 
