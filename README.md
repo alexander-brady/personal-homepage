@@ -57,10 +57,6 @@ template: custom-template
 This is my page content.
 ```
 
-**Assets**
-
-Place any static assets (images, stylesheets, etc.) in the `assets/` directory. These will be copied to the `dist/` folder during the build process. 
-
 **Root Files**
 
 To include files that should be served at the root of the site (like `robots.txt` or `favicon.ico`), place them in the `root/` directory. These files will be copied directly to the output directory during the build process.
