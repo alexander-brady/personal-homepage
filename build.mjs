@@ -22,7 +22,13 @@ const defaultTemplate = baseTemplate.replace(
 );
 
 // Copy static root files
-cpSync(rootDir, outputDir, { recursive: true });
+try {
+  cpSync(rootDir, outputDir, { recursive: true });
+} catch (err) {
+  if (err.code !== "ENOENT") {
+    console.error(`Error copying root files: ${err}`);
+  }
+}
 
 const toPosixPath = (p) => p.replaceAll("\\", "/");
 
